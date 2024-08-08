@@ -1,5 +1,4 @@
 // VALIDAR ACESSO EM TELA DE LOGIN
-
 function acessar(){
     let loginEmail = document.getElementById('loginEmail').value;
     let loginSenha = document.getElementById('loginSenha').value;
@@ -12,26 +11,34 @@ function acessar(){
     }
 }
 
-
 // FUNÇÃO QUE ARMAZENA EM ARRAY NOME NA TELA DE CADASTRO
-var dadosLista = [];
+var dadosLista = []; // Array sem tamanho definido
 function salvarUser(){
-   let nomeUser = document.getElementById('nomeUser').value;
-
-   if(nomeUser){
-    dadosLista.push(nomeUser);
-    //console.log(dadosLista);
-    document.getElementById('nomeUser').value = "";
-   }else{
-       alert("Favor informar o nome para cadastro");
-   }
+    let nomeUser = document.getElementById('nomeUser').value;
+   
+    if(nomeUser){
+        dadosLista.push(nomeUser);
+      //console.log(dadosLista);
+      criarlista()
+        document.getElementById('nomeUser').value = "";
+    }else{
+        alert('Favor informar o nome para cadastro');
+    }
+}
+ 
+// FUNÇÃO PARA CRIAR LISTA
+function criarlista(){
+    // Laço de repetição for
+    let tabela = document.getElementById ('table').innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>"
+    // i é usado para acessar a posição do array
+    for(let i = 0; i <= (dadosLista.length-1) ; i++){
+        tabela += "<tr><td>" + dadosLista [i] + "</td><td><button type='button'>Editar</button></td></tr>";
+        document.getElementById('table').innerHTML = tabela;
+    }
 }
 
-// FUNÇÃO PARA CRIAR LISTA
-function criaLista(){
-    let table = document.getElementById('table').innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>";
-    for( let i = 0; i <= (dadosLista.length-1); i++){
-        tabela +="<tr><td>" + dadosLista[i] + "</td><td></td></tr>"; 
-        document.getElementById('table').innerHTML = table;
-        }
-    }
+// FUNÇÃO PARA EDITAR NOMES DA LISTA
+function editar(i){
+    document.getElementById('nomeUser').value = dadosLista[(i - 1)];
+    dadosLista.splice(dadosLista[(i - 1)], 1);
+}
