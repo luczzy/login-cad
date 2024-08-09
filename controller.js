@@ -32,7 +32,7 @@ function criarlista(){
     let tabela = document.getElementById ('table').innerHTML = "<tr><th>Nome Usuário</th><th>Ações</th></tr>"
     // i é usado para acessar a posição do array
     for(let i = 0; i <= (dadosLista.length-1) ; i++){
-        tabela += "<tr><td>" + dadosLista [i] + "</td><td><button type='button'>Editar</button></td></tr>";
+        tabela += "<tr><td>" + dadosLista [i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)'>Editar</button><button type='button' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button></td></tr>";
         document.getElementById('table').innerHTML = tabela;
     }
 }
@@ -40,5 +40,12 @@ function criarlista(){
 // FUNÇÃO PARA EDITAR NOMES DA LISTA
 function editar(i){
     document.getElementById('nomeUser').value = dadosLista[(i - 1)];
-    dadosLista.splice(dadosLista[(i - 1)], 1);
+    dadosLista.splice(dadosLista[(i - 1)], 1); 
+}
+
+// FUNÇÃO PARA EXCLUIR NOME DA LISTA
+function excluir(i){
+    // O splice altera o conteúdo de uma lista, adicionando novos elementos enquanto remove elementos antigos.
+    dadosLista.splice((i-1), 1); 
+    document.getElementById('table').deleteRow(i);
 }
