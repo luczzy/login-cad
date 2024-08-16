@@ -20,11 +20,25 @@ function salvarUser(){
         dadosLista.push(nomeUser);
       //console.log(dadosLista);
       criarlista()
-        document.getElementById('nomeUser').value = "";
-    }else{
+        document.getElementById('nomeUser').value = "";    }
+        else{
         alert('Favor informar o nome para cadastro');
     }
 }
+// FUNÇÃO PARA ARMAZENAR EMAIL EM ARRAY
+ var dadosLista = []; // Array sem tamanho definido
+ function salvarEmail(){
+    let UserEmail = document.getElementById('UserEmail').value;
+
+    if(UserEmail){
+        dadosLista.push(EmailUser);
+        criarlista()
+            document.getElementById('UserEmail').value = "";
+    }else{
+        alert('Favor informar o nome de usuário válido');
+    }
+}
+
  
 // FUNÇÃO PARA CRIAR LISTA
 function criarlista(){
