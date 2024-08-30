@@ -1,0 +1,104 @@
+/* Estilo do body */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #a8e063, #56ab2f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Estilo do container */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilo do título */
+h3 {
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Estilo dos inputs */
+.form-control {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #56ab2f;
+    outline: none;
+}
+
+/* Estilo do botão */
+.btn-success {
+    background-color: #56ab2f;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-success:hover {
+    background-color: #45a049;
+}
+
+/* Estilo do container de senha */
+.password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo para mostrar senha */
+.show-password {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.show-password input {
+    margin-right: 8px;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+    .container {
+        padding: 30px;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    .form-control,
+    .btn-success {
+        font-size: 14px;
+    }
+}
